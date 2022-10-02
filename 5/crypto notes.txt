@@ -1,0 +1,4 @@
+linux:gen seeds using:
+u/dev/random
+u/dev/urandom -> uses system stimulus to generate randomness
+

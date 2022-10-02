@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% if user %}
+  <h2>Example {{ user.example }} User Data</h2>
+  Username: {{ user.username }}<br>
+  Password: {{ user.password }}
+{% else %}
+  Nothing to do
+{% endif %}
+<h3>This is terrible and just here to ease seeing how we're storing the password information</h3>
+{% endblock body %}

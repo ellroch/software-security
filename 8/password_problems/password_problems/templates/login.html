@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>Login</h1>
+<form action="" method="post">
+  <p>
+    <label for="username">Username</label>
+    <input type="text" name="username" autofocus>
+  </p>
+  <p>
+    <label for="password">Password</label>
+    <input type="password" name="password">
+  </p>
+  <p>
+    <input type="submit">
+  </p>
+</form>
+{% if username %}
+  <a href="{{ url_for('dump', username=username) }}">User Data - {{ username }}</a>
+{% endif %}
+{% endblock body %}

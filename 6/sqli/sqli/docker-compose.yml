@@ -1,0 +1,24 @@
+version: '3.6'
+
+services:
+  app:
+    build:
+      context: .
+    restart: always
+    ports:
+      - "8003:80"
+    volumes:
+      - ./app/:/var/www/html
+
+  db:
+    image: mariadb
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: changeme
+      MYSQL_DATABASE: a2db
+      MYSQL_USER: a2user
+      MYSQL_PASSWORD: changeme
+    volumes:
+      - .dbdata:/var/lib/mysql
+      - ./data:/docker-entrypoint-initdb.d
